@@ -1,12 +1,10 @@
-import { multiply } from 'react-native-nayan';
-import { Text, View, StyleSheet } from 'react-native';
-
-const result = multiply(3, 7);
+import { NText } from 'react-native-nayan';
+import { View, StyleSheet } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <NText />
     </View>
   );
 }
