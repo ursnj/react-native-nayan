@@ -1,4 +1,5 @@
 const path = require('path');
+const { withNativeWind } = require('nativewind/metro');
 const { getDefaultConfig } = require('@expo/metro-config');
 const { getConfig } = require('react-native-builder-bob/metro-config');
 const pkg = require('../package.json');
@@ -11,8 +12,10 @@ const root = path.resolve(__dirname, '..');
  *
  * @type {import('metro-config').MetroConfig}
  */
-module.exports = getConfig(getDefaultConfig(__dirname), {
+const config = getConfig(getDefaultConfig(__dirname), {
   root,
   pkg,
   project: __dirname,
 });
+
+module.exports = withNativeWind(config, { input: './global.css' })

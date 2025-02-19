@@ -24,6 +24,7 @@
       "package": "nayan.example"
     },
     "web": {
+      "bundler": "metro",
       "favicon": "./assets/favicon.png"
     }
   }
