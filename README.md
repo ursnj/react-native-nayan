@@ -11,14 +11,6 @@ npm install react-native-nayan
 ## Usage
 
 
-```js
-import { multiply } from 'react-native-nayan';
-
-// ...
-
-const result = await multiply(3, 7);
-```
-
 
 ## Contributing
 
