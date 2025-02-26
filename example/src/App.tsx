@@ -1,4 +1,3 @@
-import '../global.css';
 import { NText } from 'react-native-nayan';
 import { View, Text } from 'react-native';
 

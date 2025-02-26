@@ -1,3 +1,9 @@
 module.exports = {
-  presets: ['module:react-native-builder-bob/babel-preset'],
+  presets: [
+    'react-native-builder-bob/babel-preset',
+    [
+      '@babel/preset-react',
+      { runtime: 'automatic', importSource: 'nativewind' },
+    ],
+  ],
 };

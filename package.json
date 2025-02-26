@@ -165,12 +165,14 @@
       [
         "commonjs",
         {
+          "babelrc": true,
           "esm": true
         }
       ],
       [
         "module",
         {
+          "babelrc": true,
           "esm": true
         }
       ],
@@ -178,6 +180,7 @@
         "typescript",
         {
           "project": "tsconfig.build.json",
+          "babelrc": true,
           "esm": true
         }
       ]
