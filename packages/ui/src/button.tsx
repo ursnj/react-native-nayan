@@ -13,7 +13,7 @@ export interface ButtonProps {
 
 export function Button({ text, onClick }: ButtonProps) {
   return (
-    <Pressable style={styles.button} onPress={onClick}>
+    <Pressable className="bg-green-500 p-3 rounded" onPress={onClick}>
       <Text style={styles.text}>{text}</Text>
     </Pressable>
   );
