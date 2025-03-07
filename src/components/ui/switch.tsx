@@ -27,7 +27,7 @@ const SwitchWeb = React.forwardRef<SwitchPrimitives.RootRef, SwitchPrimitives.Ro
 SwitchWeb.displayName = 'SwitchWeb';
 
 const SwitchNative = React.forwardRef<SwitchPrimitives.RootRef, SwitchPrimitives.RootProps>(({ className, ...props }, ref) => {
-  const { colorScheme, colors } = useColorScheme();
+  const { colors } = useColorScheme();
   const translateX = useDerivedValue(() => (props.checked ? 18 : 0));
   const animatedRootStyle = useAnimatedStyle(() => {
     return {

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useColorScheme as useNativewindColorScheme } from 'nativewind';
 import { setAndroidNavigationBar } from '@/lib/android-navigation-bar';
 import { StorageService } from '@/services/StorageService';
-import { useTheme } from '@react-navigation/core';
+import { useTheme } from '@react-navigation/native';
 
 export const THEMES = {
   light: 'light',
