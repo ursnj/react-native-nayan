@@ -10,5 +10,5 @@ export function iconWithClassName(icon: LucideIcon) {
         opacity: true
       }
     }
-  });
+  } as any);
 }
