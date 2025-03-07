@@ -1,4 +1,3 @@
-import React from 'react';
 import { NText } from '@/components/NText';
 
 export const NRequired = () => {

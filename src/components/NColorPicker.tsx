@@ -1,4 +1,3 @@
-import React from 'react';
 import { Pressable, View } from 'react-native';
 import ColorPicker from 'react-native-wheel-color-picker';
 import { NPopover } from '@/components/NPopover';

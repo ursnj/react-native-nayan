@@ -26,17 +26,6 @@ const SwitchWeb = React.forwardRef<SwitchPrimitives.RootRef, SwitchPrimitives.Ro
 
 SwitchWeb.displayName = 'SwitchWeb';
 
-const RGB_COLORS = {
-  light: {
-    primary: 'rgb(24, 24, 27)',
-    input: 'rgb(228, 228, 231)'
-  },
-  dark: {
-    primary: 'rgb(250, 250, 250)',
-    input: 'rgb(39, 39, 42)'
-  }
-} as const;
-
 const SwitchNative = React.forwardRef<SwitchPrimitives.RootRef, SwitchPrimitives.RootProps>(({ className, ...props }, ref) => {
   const { colorScheme, colors } = useColorScheme();
   const translateX = useDerivedValue(() => (props.checked ? 18 : 0));

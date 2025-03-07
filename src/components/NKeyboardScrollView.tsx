@@ -1,5 +1,5 @@
-import { StyleProp, ViewStyle } from 'react-native';
-import { DefaultKeyboardToolbarTheme, KeyboardAwareScrollView, KeyboardToolbar, KeyboardToolbarProps } from 'react-native-keyboard-controller';
+import { type StyleProp, type ViewStyle } from 'react-native';
+import { DefaultKeyboardToolbarTheme, KeyboardAwareScrollView, KeyboardToolbar, type KeyboardToolbarProps } from 'react-native-keyboard-controller';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 interface Props {

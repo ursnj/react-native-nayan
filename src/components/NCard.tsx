@@ -1,4 +1,4 @@
-import { View, ViewProps } from 'react-native';
+import { View, type ViewProps } from 'react-native';
 import { cn } from '@/lib/utils';
 
 export const NCard = (props: ViewProps) => {

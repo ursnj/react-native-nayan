@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { PressableProps } from 'react-native';
+import { type PressableProps } from 'react-native';
 import { NPress } from '@/components/NPress';
 import { NText } from '@/components/NText';
 import { cn } from '@/lib/utils';

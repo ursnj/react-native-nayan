@@ -1,4 +1,3 @@
-import React from 'react';
 import { Pressable, PressableProps } from 'react-native';
 import { cn } from '@/lib/utils';
 

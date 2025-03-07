@@ -1,5 +1,5 @@
-import React, { ReactNode, useEffect, useState } from 'react';
-import { Linking, Platform, Text, TextProps, TextStyle, View, ViewProps } from 'react-native';
+import React, { type ReactNode, useEffect, useState } from 'react';
+import { Linking, Platform, Text, type TextProps, type TextStyle, View, type ViewProps } from 'react-native';
 // @ts-ignore
 import linkifyIt from 'linkify-it';
 // @ts-ignore

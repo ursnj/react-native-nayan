@@ -1,4 +1,4 @@
-import Toast, { BaseToast, ErrorToast, ToastConfig } from 'react-native-toast-message';
+import Toast, { BaseToast, ErrorToast, type ToastConfig } from 'react-native-toast-message';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 const toastConfig = (colors: any) => ({
