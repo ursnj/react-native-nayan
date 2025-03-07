@@ -1,5 +1,16 @@
-import { Text } from 'react-native';
+import { Text, TextProps } from 'react-native';
+import { cn } from '@/lib/utils';
 
-export const NText = (props: any) => {
-  return <Text className={'text-blue-500 ' + props.className}>Sample</Text>;
+interface Props extends TextProps {
+  className?: string;
+  children: string | React.ReactNode;
+}
+
+export const NText = (props: Props) => {
+  const { children, className, ...rest } = props;
+  return (
+    <Text className={cn(`text-text text-base leading-relaxed ${className}`)} {...rest}>
+      {children}
+    </Text>
+  );
 };
