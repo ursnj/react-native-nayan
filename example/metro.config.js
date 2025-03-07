@@ -7,6 +7,7 @@ const pkg = require('./package.json');
 const { withNativeWind } = require('nativewind/metro');
 const { getDefaultConfig } = require('@expo/metro-config');
 const { getConfig } = require('react-native-builder-bob/metro-config');
+const { wrapWithReanimatedMetroConfig } = require('react-native-reanimated/metro-config');
 
 const root = path.resolve(__dirname, '..');
 const peerDependencies = Object.keys({
@@ -60,6 +61,6 @@ const config = getConfig(
   }
 );
 
-module.exports = withNativeWind(config, {
+module.exports = withNativeWind(wrapWithReanimatedMetroConfig(config), {
   input: './global.css',
 });
