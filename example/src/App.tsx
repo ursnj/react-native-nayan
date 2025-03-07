@@ -1,6 +1,5 @@
 import '../global.css';
 import 'react-native-reanimated';
-import 'react-native-gesture-handler';
 import { NText, NPress } from 'react-native-nayan';
 import { View } from 'react-native';
 

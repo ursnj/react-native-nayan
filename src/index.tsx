@@ -16,6 +16,7 @@ export * from './components/NLinkify';
 export * from './components/NLoading';
 export * from './components/NMenuItem';
 export * from './components/NPopover';
+export * from './components/NPress';
 export * from './components/NProgress';
 export * from './components/NRadio';
 export * from './components/NRequired';
