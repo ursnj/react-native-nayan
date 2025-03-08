@@ -39,6 +39,3 @@ export * from './lib/icons/iconWithClassName';
 export * from './lib/icons/MoonStar';
 export * from './lib/icons/Sun';
 export * from './lib/utils';
-
-// Services
-export * from './services/StorageService';
