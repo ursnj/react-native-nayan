@@ -1,24 +1,24 @@
 {
   "name": "react-native-nayan",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React Native Component Library",
   "source": "./src/index.tsx",
-  "main": "./lib/commonjs/index.js",
-  "module": "./lib/module/index.js",
-  "types": "./lib/typescript/src/index.d.ts",
+  "main": "./dist/commonjs/index.js",
+  "module": "./dist/module/index.js",
+  "types": "./dist/typescript/src/index.d.ts",
   "exports": {
     ".": {
       "import": {
-        "default": "./lib/module/index.js"
+        "default": "./dist/module/index.js"
       },
       "require": {
-        "default": "./lib/commonjs/index.js"
+        "default": "./dist/commonjs/index.js"
       }
     }
   },
   "files": [
     "src",
-    "lib",
+    "dist",
     "android",
     "ios",
     "cpp",
@@ -40,7 +40,7 @@
     "test": "jest",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "clean": "del-cli lib",
+    "clean": "del-cli dist",
     "prepare": "bob build",
     "release": "release-it"
   },
@@ -108,10 +108,16 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "jest": "^29.7.0",
+    "nativewind": "^4.1.23",
     "prettier": "^3.0.3",
     "react": "18.3.1",
     "react-native": "0.76.7",
     "react-native-builder-bob": "^0.37.0",
+    "react-native-gesture-handler": "^2.24.0",
+    "react-native-keyboard-controller": "^1.16.7",
+    "react-native-mmkv": "^3.2.0",
+    "react-native-reanimated": "^3.16.1",
+    "react-native-safe-area-context": "^4.12.0",
     "release-it": "^17.10.0",
     "tailwind-merge": "^3.0.2",
     "typescript": "^5.2.2"
@@ -140,7 +146,7 @@
     "preset": "react-native",
     "modulePathIgnorePatterns": [
       "<rootDir>/example/node_modules",
-      "<rootDir>/lib/"
+      "<rootDir>/dist/"
     ]
   },
   "commitlint": {
@@ -187,7 +193,7 @@
   },
   "eslintIgnore": [
     "node_modules/",
-    "lib/"
+    "dist/"
   ],
   "prettier": {
     "quoteProps": "consistent",
