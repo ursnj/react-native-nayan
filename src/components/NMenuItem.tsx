@@ -13,7 +13,7 @@ interface Props {
   onPress: () => void;
 }
 
-const NMenuItem = (props: Props) => {
+export const NMenuItem = (props: Props) => {
   const { name, description, className = '', icon, onPress } = props;
   const { colors } = useColorScheme();
 
@@ -27,5 +27,3 @@ const NMenuItem = (props: Props) => {
     </NPress>
   );
 };
-
-export default NMenuItem;

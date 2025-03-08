@@ -13764,6 +13764,7 @@ __metadata:
     react-native-mmkv: ">=3"
     react-native-reanimated: ">=3"
     react-native-safe-area-context: ">=4"
+    react-native-svg: "*"
     tailwindcss: ">=3"
   languageName: unknown
   linkType: soft
