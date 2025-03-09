@@ -12,7 +12,7 @@ export default function App() {
   }
 
   return (
-    <NTheme theme="light" themeColors={themeColors}>
+    <NTheme theme={colorScheme} themeColors={themeColors}>
       <View className="flex-1 justify-center items-center">
         <NPress onPress={chnageTheme}>
           <NText className="text-text text-xl mt-3">Change Theme</NText>
