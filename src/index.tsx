@@ -11,7 +11,6 @@ export * from './components/NDatePicker';
 export * from './components/NDialog';
 export * from './components/NDivider';
 export * from './components/NInput';
-export * from './components/NKeyboardScrollView';
 export * from './components/NLinkify';
 export * from './components/NLoading';
 export * from './components/NMenuItem';
