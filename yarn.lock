@@ -13752,7 +13752,9 @@ __metadata:
     tailwind-merge: ^3.0.2
     typescript: ^5.2.2
   peerDependencies:
+    "@react-native-community/datetimepicker": "*"
     "@react-navigation/native": ">=6"
+    expo-navigation-bar: "*"
     nativewind: ">=4"
     react: "*"
     react-native: "*"
