@@ -13,7 +13,7 @@ import { setAndroidNavigationBar } from '@/lib/android-navigation-bar';
 
 interface Props {
   children: React.ReactNode;
-  theme: typeof THEMES;
+  theme: string;
   themeColors: any;
 }
 
@@ -23,7 +23,7 @@ export const NTheme = (props: Props) => {
 
   useEffect(() => {
     const finalTheme = theme ?? colorScheme ?? THEMES.light;
-    setColorScheme(finalTheme);
+    setColorScheme(finalTheme as any);
     setAndroidNavigationBar(finalTheme, themeColors);
   }, []);
 

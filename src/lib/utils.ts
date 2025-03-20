@@ -5,7 +5,8 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const THEMES = {
-  light: 'light',
-  dark: 'dark'
-} as any;
+export enum THEMES {
+  light = 'light',
+  dark = 'dark',
+  system = 'system'
+};
