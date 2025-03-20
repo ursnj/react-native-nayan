@@ -15,9 +15,15 @@ React Native Component Library for smooth and faster mobile application developm
 npm install react-native-nayan
 ```
 
-## 🕹 Usage
+Install peer dependencies
 
-Follow Nativewind installation as per the [nativewind](https://www.nativewind.dev/getting-started/installation) documentation.
+```shell
+npm install @react-native-community/datetimepicker @react-navigation/native expo-navigation-bar react-native-reanimated react-native-gesture-handler react-native-safe-area-context react-native-svg
+```
+
+This library completely depends on nativewind, Follow Nativewind installation as per the [nativewind](https://www.nativewind.dev/getting-started/installation) documentation.
+
+## 🕹 Usage
 
 Change tailwind.config.ts as bellow
 
@@ -30,7 +36,7 @@ module.exports = {
   darkMode: 'class',
   content: [
     './src/**/*.{js,jsx,ts,tsx}',
-    '../src/**/*.{js,jsx,ts,tsx}'
+    './node_modules/react-native-nayan/src/**/*.{js,jsx,ts,tsx}'
   ],
   presets: [require('nativewind/preset')],
   theme: {
@@ -117,7 +123,7 @@ export default function App() {
   }
 
   return (
-    <NTheme theme={colorScheme} themeColors={themeColors}>
+    <NTheme theme={colorScheme || 'light'} themeColors={themeColors}>
       <View className="flex-1 justify-center items-center">
         <NPress onPress={chnageTheme}>
           <NText className="text-text text-xl mt-3">Change Theme</NText>
