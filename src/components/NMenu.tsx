@@ -5,6 +5,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSepar
 interface Props {
   children?: ReactNode;
   trigger: ReactNode;
+  icon?: any;
   title?: string
 }
 
@@ -20,10 +21,10 @@ export const NMenu = (props: Props) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>{trigger}</DropdownMenuTrigger>
-      <DropdownMenuContent insets={contentInsets} className='w-64 native:w-72'>
+      <DropdownMenuContent insets={contentInsets} className='w-64 native:w-64 bg-card'>
         {title && (
           <>
-            <DropdownMenuLabel>{title}</DropdownMenuLabel>
+            <DropdownMenuLabel className="text-text">{title}</DropdownMenuLabel>
             <DropdownMenuSeparator/>
           </>
         )}
