@@ -124,7 +124,7 @@ export default function App() {
 
   return (
     <NTheme theme={colorScheme || THEMES.light} themeColors={themeColors}>
-      <View className="flex-1 justify-center items-center">
+      <View className="flex-1 justify-center items-center bg-background">
         <NButton onPress={changeTheme}>Change Theme</NButton>
       </View>
     </NTheme>
