@@ -1,5 +1,6 @@
 // Components
 export * from './components/NAccordion';
+export * from './components/NActionItem';
 export * from './components/NAlert';
 export * from './components/NButton';
 export * from './components/NButtonGroup';
@@ -13,6 +14,7 @@ export * from './components/NDivider';
 export * from './components/NInput';
 export * from './components/NLinkify';
 export * from './components/NLoading';
+export * from './components/NMenu';
 export * from './components/NMenuItem';
 export * from './components/NPopover';
 export * from './components/NPress';
