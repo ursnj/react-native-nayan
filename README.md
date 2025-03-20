@@ -112,7 +112,7 @@ Change your app starting file as bellow
 import '../global.css';
 import 'react-native-reanimated';
 import { View } from 'react-native';
-import { NText, NPress, NTheme, useColorScheme, THEMES } from 'react-native-nayan';
+import { NButton, NTheme, useColorScheme, THEMES } from 'react-native-nayan';
 import { themeColors } from './constants';
 
 export default function App() {
@@ -125,9 +125,7 @@ export default function App() {
   return (
     <NTheme theme={colorScheme || THEMES.light} themeColors={themeColors}>
       <View className="flex-1 justify-center items-center">
-        <NPress onPress={changeTheme}>
-          <NText className="text-text text-xl mt-3">Change Theme</NText>
-        </NPress>
+        <NButton onPress={changeTheme}>Change Theme</NButton>
       </View>
     </NTheme>
   );
