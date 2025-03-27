@@ -32,7 +32,7 @@ export const NSelect = (props: Props) => {
     right: 12
   };
 
-  const handleSelect = (selectedValue: string) => {
+  const handleSelect = (selectedValue: any) => {
     const isSelected = value.some(item => item.value === selectedValue);
     let newValue;
 
@@ -49,12 +49,11 @@ export const NSelect = (props: Props) => {
   return (
     <View className="flex-1 mb-3">
       {label && <NText className="mb-1">{label}</NText>}
-      <Select value={value.map(item => item.value)} onValueChange={handleSelect} disabled={disabled} multiple>
+      <Select defaultValue={value.map(item => item.value) as any} onValueChange={handleSelect} disabled={disabled}>
         <SelectTrigger className={cn('w-full bg-card border-border', disabled && 'opacity-70')} disabled={disabled}>
           <SelectValue
             className="text-text text-sm native:text-lg"
             placeholder={placeholder}
-            value={value.map(item => item.label).join(', ')}
           />
         </SelectTrigger>
         <SelectContent insets={contentInsets} className="w-full bg-card border-border shadow">
@@ -67,7 +66,6 @@ export const NSelect = (props: Props) => {
                   key={item.value}
                   label={item.label}
                   value={item.value}
-                  selected={value.some(v => v.value === item.value)}
                 >
                   {item.label}
                 </SelectItem>
