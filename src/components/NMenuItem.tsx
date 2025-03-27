@@ -15,7 +15,7 @@ export const NMenuItem = (props: Props) => {
   return (
     <>
       <DropdownMenuItem>
-        <Icon />
+        {/*<Icon />*/}
         <NText>{title}</NText>
         {shortcut && <DropdownMenuShortcut className="text-muted">{shortcut}</DropdownMenuShortcut>}
       </DropdownMenuItem>
