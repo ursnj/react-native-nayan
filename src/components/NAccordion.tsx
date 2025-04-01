@@ -4,17 +4,18 @@ import { cn } from '@/lib/utils';
 
 interface Props {
   className?: string;
+  itemClassName?: string;
   titleClassName?: string;
   descriptionClassName?: string;
   items: { title: string; description: string }[];
 }
 
 export const NAccordion = (props: Props) => {
-  const { items, className = '', titleClassName = '', descriptionClassName = '' } = props;
+  const { items, className = '', itemClassName = '', titleClassName = '', descriptionClassName = '' } = props;
   return (
     <Accordion type="multiple" collapsible defaultValue={['item-0']} className={cn('w-full', className)}>
       {items.map((item: any, index) => (
-        <AccordionItem key={index} value={'item-' + index}>
+        <AccordionItem className={itemClassName} key={index} value={'item-' + index}>
           <AccordionTrigger className="p-3">
             <NText className={cn('text-lg', titleClassName)}>{item.title}</NText>
           </AccordionTrigger>

@@ -9,7 +9,7 @@ const Component = () => {
 
   return (
     <View className="flex-1 p-3">
-      <NAccordion items={items} className="border border-border rounded bg-card" titleClassName="text-text" descriptionClassName="text-muted" />
+      <NAccordion items={items} className="" itemClassName="border border-border rounded bg-card mb-3" titleClassName="text-text" descriptionClassName="text-muted" />
     </View>
   )
 };
