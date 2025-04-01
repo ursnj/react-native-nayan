@@ -1,3 +1,4 @@
+import {useCallback} from 'react';
 import { View } from 'react-native';
 import { NPress } from '@/components/NPress';
 import { NText } from '@/components/NText';
@@ -13,7 +14,7 @@ interface Props {
 
 export const NActionItem = (props: Props) => {
   const { name, description, className = '', icon, onPress } = props;
-  const Icon = icon;
+  const Icon = useCallback(() => icon, []);
 
   return (
     <NPress className={cn(`flex flex-row justify-start items-center px-3 py-2 bg-card ${className}`)} onPress={onPress}>

@@ -10,12 +10,12 @@ interface Props {
 
 export const NMenuItem = (props: Props) => {
   const { title, shortcut = '', hasSeparator = false, icon = null } = props;
-  const Icon = !!icon ? icon : <></>;
+  const Icon = () => icon;
 
   return (
     <>
       <DropdownMenuItem>
-        {/*<Icon />*/}
+        {icon && <Icon />}
         <NText>{title}</NText>
         {shortcut && <DropdownMenuShortcut className="text-muted">{shortcut}</DropdownMenuShortcut>}
       </DropdownMenuItem>
