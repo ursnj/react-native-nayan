@@ -26,3 +26,7 @@ export const themeColors = {
     }
   }
 };
+
+export const components = [
+  {name: 'button', title: 'Button' }
+];
