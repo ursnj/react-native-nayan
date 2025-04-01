@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const NActionItem = (props: Props) => {
-  const { name, description, className = '', icon, onPress } = props;
+  const { name, description = '', className = '', icon, onPress } = props;
   const Icon = useCallback(() => icon, []);
 
   return (

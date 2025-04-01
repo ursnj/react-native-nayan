@@ -12,15 +12,17 @@ export default function Home() {
   }
 
   return (
-      <ScrollView className="flex-1 bg-background pb-3">
-        <Stack.Screen options={{headerRight: () => {
-          return (
+      <ScrollView className="flex-1 bg-background">
+        <Stack.Screen options={{headerRight: () => (
             <NPress onPress={changeTheme} className="p-3">
               <NText>{isDarkColorScheme ? 'Light' : 'Dark'}</NText>
             </NPress>
-          );
-          }}} />
-        {components.map((component: any) => <NPress key={component.name} className="py-3 px-4 bg-card m-3 mb-0 border border-border rounded" onPress={() => router.navigate({ pathname: component.name })}><NText>{component.title}</NText></NPress>)}
+          )}} />
+        {components.map((component: any) => (
+          <NPress key={component.name} className="py-3 px-4 bg-card m-3 mb-0 border border-border rounded" onPress={() => router.navigate({ pathname: component.name })}>
+            <NText className="text-lg">{component.title}</NText>
+          </NPress>
+        ))}
       </ScrollView>
   );
 }
