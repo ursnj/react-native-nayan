@@ -9,16 +9,18 @@ const Component = () => {
     <View className="flex-1 p-3">
       <NActionItem
         className="rounded border border-border mb-3"
-        name="Report Post"
-        description="Report post if its inappropriate."
+        name="Default Action Item"
+        description="This is a default action item."
         icon={<Ionicons name="flag" size={23} color={colors.text} />}
-        onPress={() => NToast.success("Report item clicked")} />
+        onPress={() => NToast.success("Default item clicked")} />
       <NActionItem
-        className="rounded border border-border mb-3"
-        name="Delete Post"
-        description="Delete post if its no longer needed."
+        className="rounded border border-primary bg-primary mb-3"
+        titleClassName="text-text"
+        descriptionClassName="text-text"
+        name="Custom Action Item"
+        description="This is a custom action item."
         icon={<Ionicons name="trash" size={23} color={colors.text} />}
-        onPress={() => NToast.success("Delete item clicked")} />
+        onPress={() => NToast.success("Custom item clicked")} />
     </View>
   )
 };
