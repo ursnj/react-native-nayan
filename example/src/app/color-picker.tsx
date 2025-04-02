@@ -1,8 +1,13 @@
+import { useState } from 'react';
 import {View} from 'react-native';
-const Component = () => {
-  return (
-    <View className="flex-1 justify-center items-center p-3">
+import { NColorPicker } from 'react-native-nayan';
 
+const Component = () => {
+  const [color, setColor] = useState('#ffffff');
+
+  return (
+    <View className="flex-1 p-3">
+      <NColorPicker label="Choose color" value={color} onChange={setColor} disabled={false} />
     </View>
   )
 };

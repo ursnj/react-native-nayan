@@ -10,8 +10,14 @@ import {
   AlertDialogTrigger
 } from '@/components/ui/alert-dialog';
 import { NText } from '@/components/NText';
+import { cn } from 'react-native-nayan';
 
 interface Props {
+  className?: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
+  confirmClassName?: string;
+  cancelClassName?: string;
   title: string;
   description: string;
   onResult: (result: boolean) => void;
@@ -19,21 +25,21 @@ interface Props {
 }
 
 export const NConfirm = (props: Props) => {
-  const { title, description, children, onResult } = props;
+  const { title, description, children, onResult, className='', titleClassName = '', descriptionClassName = '', confirmClassName = '', cancelClassName = '' } = props;
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>{children}</AlertDialogTrigger>
-      <AlertDialogContent className="bg-card p-3 min-w-[320px]">
+      <AlertDialogContent className={cn("bg-card p-3 min-w-[320px]", className)}>
         <AlertDialogHeader>
-          <AlertDialogTitle className="text-text">{title}</AlertDialogTitle>
-          <AlertDialogDescription className="text-text">{description}</AlertDialogDescription>
+          <AlertDialogTitle className={cn("text-text", titleClassName)}>{title}</AlertDialogTitle>
+          <AlertDialogDescription className={cn("text-text", descriptionClassName)}>{description}</AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter className="flex-row">
           <AlertDialogAction onPress={() => onResult(true)}>
-            <NText className="text-white">Continue</NText>
+            <NText className={cn("text-white", confirmClassName)}>Continue</NText>
           </AlertDialogAction>
           <AlertDialogCancel className="border-muted bg-border" onPress={() => onResult(false)}>
-            <NText>Cancel</NText>
+            <NText className={cn("text-text", cancelClassName)}>Cancel</NText>
           </AlertDialogCancel>
         </AlertDialogFooter>
       </AlertDialogContent>
