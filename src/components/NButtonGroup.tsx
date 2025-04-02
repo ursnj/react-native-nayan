@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 interface Props {
   className?: string;
-  label: string;
+  label?: string;
   size?: 'sm' | 'default' | 'lg' | any;
   items: string[];
   value: string;
@@ -14,7 +14,7 @@ interface Props {
 }
 
 export const NButtonGroup = (props: Props) => {
-  const { className = '', items, value, size = 'default', label, disabled = false, onChange } = props;
+  const { className = '', items, value, size = 'default', label = '', disabled = false, onChange } = props;
   return (
     <View className="w-full flex flex-row justify-between items-center mb-3">
       {label && <NText className="mb-1">{label}</NText>}

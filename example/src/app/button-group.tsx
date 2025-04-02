@@ -1,8 +1,13 @@
+import { useState } from 'react';
 import {View} from 'react-native';
-const Component = () => {
-  return (
-    <View className="flex-1 justify-center items-center p-3">
+import { NButtonGroup } from 'react-native-nayan';
 
+const Component = () => {
+  const items = ["Startup", "Enterprise"];
+  const [selected, setSelected] = useState(items[0] as string);
+  return (
+    <View className="flex-1 p-3">
+      <NButtonGroup className="" items={items} value={selected} onChange={setSelected} label="Choose business type" />
     </View>
   )
 };

@@ -1,9 +1,10 @@
-import {View} from 'react-native';
+import { NCard, NText } from 'react-native-nayan';
+
 const Component = () => {
   return (
-    <View className="flex-1 justify-center items-center p-3">
-
-    </View>
+    <NCard className="flex-1 justify-center items-center m-3">
+      <NText>This is sample text.</NText>
+    </NCard>
   )
 };
 

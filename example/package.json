@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~4.0.1",
+    "@expo/vector-icons": "^14.0.4",
     "@react-native-community/datetimepicker": "^8.3.0",
     "expo": "~52.0.35",
     "expo-constants": "^17.0.8",
