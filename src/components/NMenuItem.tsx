@@ -1,27 +1,25 @@
-import { View } from 'react-native';
-import { NPress } from '@/components/NPress';
-import { NText } from '@/components/NText';
-import { cn } from '@/lib/utils';
+import { DropdownMenuItem, DropdownMenuSeparator, DropdownMenuShortcut } from '@/components/ui/dropdown-menu';
+import { NText } from './NText';
 
 interface Props {
-  name: string;
-  description?: string;
-  className?: string;
-  icon: any;
-  onPress: () => void;
+    title: string;
+    shortcut?: string;
+    icon?: any;
+    hasSeparator?: boolean;
 }
 
 export const NMenuItem = (props: Props) => {
-  const { name, description, className = '', icon, onPress } = props;
-  const Icon = icon;
+  const { title, shortcut = '', hasSeparator = false, icon = null } = props;
+  const Icon = () => icon;
 
   return (
-    <NPress className={cn(`flex flex-row justify-start items-center px-3 py-2 bg-card ${className}`)} onPress={onPress}>
-      {icon && <Icon />}
-      <View className="pl-3">
-        <NText className="font-medium mb-0.5">{name}</NText>
-        {description && <NText className="text-sm text-muted mt-0">{description}</NText>}
-      </View>
-    </NPress>
-  );
+    <>
+      <DropdownMenuItem>
+        {icon && <Icon />}
+        <NText>{title}</NText>
+        {shortcut && <DropdownMenuShortcut className="text-muted">{shortcut}</DropdownMenuShortcut>}
+      </DropdownMenuItem>
+      {hasSeparator && <DropdownMenuSeparator/>}
+    </>
+  )
 };

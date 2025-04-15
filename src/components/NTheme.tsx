@@ -10,6 +10,7 @@ import { PortalHost } from '@rn-primitives/portal';
 import { NToast } from './NToast';
 import { THEMES } from '@/lib/utils';
 import { setAndroidNavigationBar } from '@/lib/android-navigation-bar';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 interface Props {
   children: React.ReactNode;
@@ -55,9 +56,11 @@ export const NTheme = (props: Props) => {
       <View className="flex-1" style={themeVars[colorScheme as any]}>
         <StatusBar style={isDarkColorScheme ? THEMES.light : THEMES.dark} />
         <GestureHandlerRootView className="flex-1">
-          <BottomSheetModalProvider>{props.children}</BottomSheetModalProvider>
-          <PortalHost />
-          <NToast />
+          <SafeAreaProvider>
+            <BottomSheetModalProvider>{props.children}</BottomSheetModalProvider>
+            <PortalHost />
+            <NToast />
+          </SafeAreaProvider>
         </GestureHandlerRootView>
       </View>
     </ThemeProvider>
