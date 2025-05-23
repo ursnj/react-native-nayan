@@ -14,13 +14,15 @@ interface Props {
   isDarkMode?: boolean;
   disabled?: boolean;
   className?: string;
+  labelClassName?: string;
+  inputClassName?: string;
   type?: 'date' | 'time' | 'datetime';
   onChange: (date: Date) => void;
 }
 
 export const NDatePicker = (props: Props) => {
   const { isDarkColorScheme } = useColorScheme();
-  const { label = '', type = 'date', isDarkMode = isDarkColorScheme, disabled = false, className = '', value, onChange } = props;
+  const { label = '', type = 'date', isDarkMode = isDarkColorScheme, disabled = false, className = '', labelClassName = '', inputClassName = '', value, onChange } = props;
   const [isVisible, setIsVisible] = useState(false);
 
   const hideDatePicker = () => {
@@ -47,8 +49,8 @@ export const NDatePicker = (props: Props) => {
   };
 
   return (
-    <View className="w-full mb-3">
-      {label && <NText className="mb-1">{label}</NText>}
+    <View className={cn("w-full mb-3", className)}>
+      {label && <NText className={cn("mb-1", labelClassName)}>{label}</NText>}
       <DateTimePickerModal
         isVisible={isVisible}
         mode={type}
