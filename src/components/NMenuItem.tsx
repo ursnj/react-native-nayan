@@ -6,6 +6,7 @@ interface Props {
   title: string;
   shortcut?: string;
   icon?: any;
+  onPress: () => void;
   hasSeparator?: boolean;
   className?: string;
   textClassName?: string;
@@ -18,7 +19,7 @@ export const NMenuItem = (props: Props) => {
 
   return (
     <>
-      <DropdownMenuItem className={className}>
+      <DropdownMenuItem className={className} onPress={props.onPress}>
         {icon && <Icon />}
         <NText className={textClassName}>{title}</NText>
         {shortcut && <DropdownMenuShortcut className={cn("text-muted", shortcutClassName)}>{shortcut}</DropdownMenuShortcut>}
