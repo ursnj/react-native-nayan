@@ -1,8 +1,12 @@
 import {View} from 'react-native';
-const Component = () => {
-  return (
-    <View className="flex-1 justify-center items-center p-3">
+import { NSwitch } from 'react-native-nayan';
+import { useState } from 'react';
 
+const Component = () => {
+  const [checked, setChecked] = useState(false);
+  return (
+    <View className="flex-1 justify-start items-center p-3">
+      <NSwitch label="Is dark mode?" checked={checked} onChange={setChecked} disabled={false} />
     </View>
   )
 };

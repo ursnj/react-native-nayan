@@ -1,5 +1,9 @@
 import { Pressable } from 'react-native';
-import { cn, MoonStar, setAndroidNavigationBar, Sun, THEMES, useNTheme } from 'react-native-nayan';
+import { useNTheme } from '@/hooks/useNTheme';
+import { MoonStar } from '@/lib/icons/MoonStar';
+import { Sun } from '@/lib/icons/Sun';
+import { cn, THEMES } from '@/lib/utils';
+import { setAndroidNavigationBar } from '@/lib/android-navigation-bar';
 
 interface Props {
   size?: number;
@@ -21,7 +25,7 @@ export const NThemeToggle = (props: Props) => {
   }
 
   return (
-    <Pressable onPress={toggleTheme} className="px-6 py-5 flex justify-start items-start">
+    <Pressable onPress={toggleTheme}>
       <Component className={cn("text-primary", className)} size={size} strokeWidth={strokeWidth} />
     </Pressable>
   );

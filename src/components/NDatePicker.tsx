@@ -4,9 +4,9 @@ import { format } from 'date-fns';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import { NText } from '@/components/NText';
 import { Calendar } from '@/lib/icons/Calender';
-import { useColorScheme } from '@/hooks/useColorScheme';
 import { cn } from '@/lib/utils';
 import { NPress } from '@/components/NPress';
+import { useNTheme } from '@/hooks/useNTheme';
 
 interface Props {
   value: Date;
@@ -23,8 +23,8 @@ interface Props {
 }
 
 export const NDatePicker = (props: Props) => {
-  const { isDarkColorScheme } = useColorScheme();
-  const { label = '', type = 'date', isDarkMode = isDarkColorScheme, disabled = false, className = '', labelClassName = '', inputClassName = '', inputTextClassName = '', inputIconClassName = '', value, onChange } = props;
+  const { isDarkMode: isDarkTheme } = useNTheme();
+  const { label = '', type = 'date', isDarkMode = isDarkTheme, disabled = false, className = '', labelClassName = '', inputClassName = '', inputTextClassName = '', inputIconClassName = '', value, onChange } = props;
   const [isVisible, setIsVisible] = useState(false);
 
   const hideDatePicker = () => {
@@ -64,7 +64,7 @@ export const NDatePicker = (props: Props) => {
       />
       <NPress
         onPress={showDatePicker}
-        className={cn('flex-1 flex-row justify-between items-center bg-card border border-border rounded px-3 py-2.5', inputClassName)}>
+        className={cn('flex flex-row justify-between items-center bg-card border border-border rounded px-3 py-2.5', inputClassName)}>
         <NText className={cn("text-lg", inputTextClassName)}>{formatValue(value)}</NText>
         <Calendar strokeWidth={1} className={cn("w-5 h-5 text-text", inputIconClassName)} />
       </NPress>
