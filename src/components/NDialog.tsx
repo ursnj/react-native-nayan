@@ -20,7 +20,7 @@ export const NDialog = (props: Props) => {
     <Dialog>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className={cn("border-border rounded p-0 min-w-[320px] sm:max-w-[425px]", className)}>
-        <DialogHeader className={cn("p-3", headerClassName)}>
+        <DialogHeader className={cn("px-3 py-2", headerClassName)}>
           <DialogTitle className={cn("text-text", headerTitleClassName)}>{title}</DialogTitle>
         </DialogHeader>
         <View className={contentClassName}>{children}</View>

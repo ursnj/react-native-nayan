@@ -54,7 +54,6 @@ export const components = [
   {name: 'switch', title: 'Switch' },
   {name: 'text', title: 'Text' },
   {name: 'textarea', title: 'Textarea' },
-  {name: 'theme', title: 'Theme' },
   {name: 'toast', title: 'Toast' },
   {name: 'tooltip', title: 'Tooltip' }
 ];

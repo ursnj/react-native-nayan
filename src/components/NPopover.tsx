@@ -23,7 +23,7 @@ export const NPopover = (props: Props) => {
   return (
     <Popover>
       <PopoverTrigger asChild>{trigger}</PopoverTrigger>
-      <PopoverContent side={Platform.OS === 'web' ? 'bottom' : 'top'} insets={contentInsets} className={cn("w-80 bg-card p-3 shadow-sm", className)}>
+      <PopoverContent side={Platform.OS === 'web' ? 'bottom' : 'top'} insets={contentInsets} className={cn("w-80 bg-card p-0 shadow-sm", className)}>
         {children}
       </PopoverContent>
     </Popover>
