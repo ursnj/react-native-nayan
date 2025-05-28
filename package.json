@@ -1,6 +1,6 @@
 {
   "name": "react-native-nayan",
-  "version": "0.10.0",
+  "version": "1.0.0",
   "description": "React Native Component Library",
   "source": "./src/index.tsx",
   "main": "./dist/commonjs/index.js",
