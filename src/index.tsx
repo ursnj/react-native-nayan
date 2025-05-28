@@ -33,7 +33,6 @@ export * from './components/NToast';
 export * from './components/NTooltip';
 
 // Hooks
-export * from './hooks/useColorScheme';
 export * from './hooks/useNKeyboard';
 export * from './hooks/useNTheme';
 

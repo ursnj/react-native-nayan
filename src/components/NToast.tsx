@@ -1,5 +1,5 @@
 import Toast, { BaseToast, ErrorToast, type ToastConfig } from 'react-native-toast-message';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { useNTheme } from '@/hooks/useNTheme';
 
 const toastConfig = (colors: any) => ({
   success: (props: any) => (
@@ -39,7 +39,7 @@ interface Props {
 }
 
 export const NToast = (props: Props) => {
-  const { colors } = useColorScheme();
+  const { colors } = useNTheme();
   const { config = toastConfig(colors) } = props;
 
   return <Toast config={config} />;

@@ -5,7 +5,7 @@ import linkifyIt from 'linkify-it';
 // @ts-ignore
 import mdurl from 'mdurl';
 import { NText } from '@/components/NText';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { useNTheme } from '@/hooks/useNTheme';
 
 const defaultLinkify = linkifyIt();
 const { OS } = Platform;
@@ -22,7 +22,7 @@ type LinkifyProps = ViewProps & {
 };
 
 const Linkify = (props: LinkifyProps) => {
-  const { colors } = useColorScheme();
+  const { colors } = useNTheme();
   const {
     children,
     style,

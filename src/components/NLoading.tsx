@@ -1,6 +1,6 @@
 import { ActivityIndicator, View } from 'react-native';
-import { useColorScheme } from '@/hooks/useColorScheme';
 import { cn } from '@/lib/utils';
+import { useNTheme } from '@/hooks/useNTheme';
 
 interface Props {
   color?: string;
@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const NLoading = (props: Props) => {
-  const { colors } = useColorScheme();
+  const { colors } = useNTheme();
   const { className = '', size = 'large', color = colors.primary } = props;
   return (
     <View className={cn("flex-1 justify-center items-center", className)}>

@@ -1,9 +1,9 @@
 import {View} from 'react-native';
-import { NActionItem, NToast, useColorScheme } from 'react-native-nayan';
+import { NActionItem, NToast, useNTheme } from 'react-native-nayan';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Component = () => {
-  const {colors} = useColorScheme();
+  const {colors} = useNTheme();
 
   return (
     <View className="flex-1 p-3">

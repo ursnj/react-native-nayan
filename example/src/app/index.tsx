@@ -1,14 +1,14 @@
 import { Stack, useRouter } from 'expo-router';
 import { ScrollView } from 'react-native';
-import { NPress, NText, useColorScheme, THEMES, NCard, NThemeToggle } from 'react-native-nayan';
+import { NPress, NText, THEMES, NCard, NThemeToggle, useNTheme } from 'react-native-nayan';
 import { components } from '../constants';
 
 export default function Home() {
   const router = useRouter();
-  const {isDarkColorScheme, setColorScheme} = useColorScheme();
+  const {isDarkMode, setTheme} = useNTheme();
 
   const changeTheme = () => {
-    setColorScheme(isDarkColorScheme ? THEMES.light : THEMES.dark);
+    setTheme(isDarkMode ? THEMES.light : THEMES.dark);
   }
 
   return (
