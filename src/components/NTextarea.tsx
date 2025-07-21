@@ -9,15 +9,17 @@ interface Props extends TextInputProps {
   placeholder?: string;
   disabled?: boolean;
   className?: string;
+  labelClassName?: string;
+  inputClassName?: string;
   onChangeText: (text: string) => void;
 }
 
 export const NTextarea = (props: Props) => {
-  const { value, label = '', placeholder = '', className = '', onChangeText, disabled = false, ...remaining } = props;
+  const { value, label = '', placeholder = '', className = '', labelClassName = '', inputClassName = '', onChangeText, disabled = false, ...remaining } = props;
 
   return (
-    <View className="flex-1 mb-3">
-      {label && <NText className="mb-1">{label}</NText>}
+    <View className={cn('flex-1 mb-3', className)}>
+      {label && <NText className={cn("mb-1", labelClassName)}>{label}</NText>}
       <Textarea
         value={value}
         editable={!disabled}
@@ -25,7 +27,7 @@ export const NTextarea = (props: Props) => {
         onChangeText={onChangeText}
         placeholderClassName="text-muted"
         textAlignVertical="top"
-        className={cn('text-text text-base border border-border bg-card', className)}
+        className={cn('text-text text-base border border-border bg-card', inputClassName)}
         {...remaining}
       />
     </View>

@@ -28,11 +28,13 @@ export * from './components/NSwitch';
 export * from './components/NText';
 export * from './components/NTextarea';
 export * from './components/NTheme';
+export * from './components/NThemeToggle';
 export * from './components/NToast';
 export * from './components/NTooltip';
 
 // Hooks
-export * from './hooks/useColorScheme';
+export * from './hooks/useNKeyboard';
+export * from './hooks/useNTheme';
 
 // Lib
 export * from './lib/android-navigation-bar';

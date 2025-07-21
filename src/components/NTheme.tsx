@@ -3,7 +3,6 @@ import { View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { vars } from 'nativewind';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { useColorScheme } from '@/hooks/useColorScheme';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { ThemeProvider } from '@react-navigation/native';
 import { PortalHost } from '@rn-primitives/portal';
@@ -11,6 +10,7 @@ import { NToast } from './NToast';
 import { THEMES } from '@/lib/utils';
 import { setAndroidNavigationBar } from '@/lib/android-navigation-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { useNTheme } from '@/hooks/useNTheme';
 
 interface Props {
   children: React.ReactNode;
@@ -19,18 +19,19 @@ interface Props {
 }
 
 export const NTheme = (props: Props) => {
-  const { theme, themeColors } = props;
-  const { colorScheme, setColorScheme, isDarkColorScheme } = useColorScheme();
+  const { theme:rawTheme, themeColors } = props;
+  const { theme, setTheme, setThemeColors, isDarkMode } = useNTheme();
 
   useEffect(() => {
-    const finalTheme = theme ?? colorScheme ?? THEMES.light;
-    setColorScheme(finalTheme as any);
+    const finalTheme = rawTheme ?? theme ?? THEMES.light;
+    setTheme(finalTheme as any);
+    setThemeColors(themeColors);
     setAndroidNavigationBar(finalTheme, themeColors);
   }, []);
 
   useEffect(() => {
-    colorScheme && setAndroidNavigationBar(colorScheme, themeColors);
-  }, [colorScheme]);
+    theme && setAndroidNavigationBar(theme, themeColors);
+  }, [theme, themeColors]);
 
   const themeVars = {
     light: vars({
@@ -52,9 +53,9 @@ export const NTheme = (props: Props) => {
   } as any;
 
   return (
-    <ThemeProvider value={isDarkColorScheme ? themeColors.dark : themeColors.light}>
-      <View className="flex-1" style={themeVars[colorScheme as any]}>
-        <StatusBar style={isDarkColorScheme ? THEMES.light : THEMES.dark} />
+    <ThemeProvider value={isDarkMode ? themeColors.dark : themeColors.light}>
+      <View className="flex-1" style={themeVars[theme as any]}>
+        <StatusBar style={isDarkMode ? THEMES.light : THEMES.dark} />
         <GestureHandlerRootView className="flex-1">
           <SafeAreaProvider>
             <BottomSheetModalProvider>{props.children}</BottomSheetModalProvider>

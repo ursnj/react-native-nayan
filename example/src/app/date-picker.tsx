@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import {View} from 'react-native';
-const Component = () => {
-  return (
-    <View className="flex-1 justify-center items-center p-3">
+import { NDatePicker } from 'react-native-nayan';
 
+const Component = () => {
+  const [date, setDate] = useState(new Date());
+  return (
+    <View className="p-3">
+      <NDatePicker label="Pick Date" onChange={setDate} value={date} />
     </View>
   )
 };

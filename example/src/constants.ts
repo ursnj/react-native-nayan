@@ -43,7 +43,7 @@ export const components = [
   {name: 'input', title: 'Input' },
   {name: 'linkify', title: 'Linkify' },
   {name: 'loader', title: 'Loader' },
-  {name: 'menu', title: 'Dropdown Menu' },
+  {name: 'menu', title: 'Menu' },
   {name: 'popover', title: 'Popover' },
   {name: 'pressable', title: 'Pressable' },
   {name: 'progress', title: 'Progress' },
@@ -54,7 +54,6 @@ export const components = [
   {name: 'switch', title: 'Switch' },
   {name: 'text', title: 'Text' },
   {name: 'textarea', title: 'Textarea' },
-  {name: 'theme', title: 'Theme' },
   {name: 'toast', title: 'Toast' },
   {name: 'tooltip', title: 'Tooltip' }
 ];

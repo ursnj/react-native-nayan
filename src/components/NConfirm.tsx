@@ -10,7 +10,7 @@ import {
   AlertDialogTrigger
 } from '@/components/ui/alert-dialog';
 import { NText } from '@/components/NText';
-import { cn } from 'react-native-nayan';
+import { cn } from '@/lib/utils';
 
 interface Props {
   className?: string;

@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import { useColorScheme } from '@/hooks/useColorScheme';
 import { BottomSheetBackdrop, type BottomSheetBackdropProps, BottomSheetModal, BottomSheetView } from '@gorhom/bottom-sheet';
+import { useNTheme } from '@/hooks/useNTheme';
 
 interface Props {
   sheetRef: any;
@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const NSheet = (props: Props) => {
-  const { colors } = useColorScheme();
+  const { colors } = useNTheme();
   const { sheetRef, children, snapPoints = null } = props;
 
   const renderBackdrop = useCallback(

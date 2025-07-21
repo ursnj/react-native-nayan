@@ -112,18 +112,18 @@ Change your app starting file as bellow
 import '../global.css';
 import 'react-native-reanimated';
 import { View } from 'react-native';
-import { NButton, NTheme, useColorScheme, THEMES } from 'react-native-nayan';
+import { NButton, NTheme, useNTheme, THEMES } from 'react-native-nayan';
 import { themeColors } from './constants';
 
 export default function App() {
-  const {colorScheme, isDarkColorScheme, setColorScheme} = useColorScheme();
+  const {theme, isDarkMode, setTheme} = useNTheme();
 
   const changeTheme = () => {
-    setColorScheme(isDarkColorScheme ? THEMES.light : THEMES.dark);
+    setTheme(isDarkMode ? THEMES.light : THEMES.dark);
   }
 
   return (
-    <NTheme theme={colorScheme || THEMES.light} themeColors={themeColors}>
+    <NTheme theme={theme || THEMES.light} themeColors={themeColors}>
       <View className="flex-1 justify-center items-center bg-background">
         <NButton onPress={changeTheme}>Change Theme</NButton>
       </View>

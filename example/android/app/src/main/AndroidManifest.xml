@@ -25,7 +25,6 @@
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
         <data android:scheme="nayan"/>
-        <data android:scheme="nayan.example"/>
       </intent-filter>
     </activity>
   </application>
